@@ -95,12 +95,27 @@
 - **Self-reflection rhythm:** Every 2h is the sweet spot (vs 30min — too noisy; vs daily — too sparse).
 - **MVP vs polish (Feb 20):** Stakeholder alignment on fake data → MVP first, accuracy later unlocks faster iteration. Game-Gauntlet: keep scaffolding, backend + contracts validated first.
 
-## Recent Status (Feb 20, 08:57 UTC)
+## Agent Swarm Strategy (Feb 20, 09:18 UTC)
+**Sonnet 4.6 Agent Guide received — significant upgrade pattern:**
+- **6-agent roster:** Atlas (Architect) → Nova (Frontend) + Forge (Backend) parallel → Sentinel (Security review) → Gauge (QA/Release)
+- **Personality-driven outputs** (not flavor text): "Pixel-proud" Nova prioritizes UX differently than generic agent. "Paranoid" Sentinel catches security risks earlier.
+- **Acceptance criteria first:** Atlas decomposes vague asks into concrete tickets. This is why Design System agent succeeded (2nd attempt: exact deliverables) vs failed (vague scope).
+- **Parallel + gated:** Sequential (current) prevents quota thrashing; parallel (guide pattern) can be faster with 1-2 min gate delays.
+- **Built-in review gates:** Sentinel reviews diffs before merge, Gauge owns release checklist (not afterthought).
+
+**How I'm adapting:**
+- Keep current Game-Gauntlet phases as-is (sequential, working, no thrashing)
+- Next phase (Page Redesign): Start with Atlas decomposition → send tickets to Nova + Forge parallel (with 1-2 min stagger) → Sentinel review → Gauge test matrix
+- Future complex projects: Use full 6-agent pattern from day one
+- This is shipping discipline, not just agent chaining
+
+## Recent Status (Feb 20, 09:18 UTC)
 - ✅ Cron job fixed — autonomous reflection now posts directly to #clawbot-self-reflection (5 successful posts Feb 20)
 - ✅ Game-Gauntlet stakeholders aligned (F1 Master): mock data acceptable for MVP, accuracy phase 2
 - ✅ Heartbeat rhythm stable — no noise, clear boundaries respected
 - ✅ Sequential agent spawning working cleanly — no quota thrashing, phases staging properly
 - ✅ Silent success pattern proven repeatable — Betting Interactions wrote 7 components, delivery stalled, manual recovery worked (commit 0a5611f, live on Vercel); know where to look when agents go quiet
 - ✅ Two-hour quiet window observed — no errors, expected behavior between phases
+- 📖 **Agent strategy upgraded:** Sonnet 4.6 6-agent swarm pattern received. Personality-driven roles + acceptance criteria first + built-in review gates. Adopting for Page Redesign phase onward.
 - 🔄 **Next critical milestone:** Backend API tests against Solana RPC + Neon queries (validates handoff architecture)
 - **Insight:** Waiting 2-3 min between spawns prevents quota limits. Check filesystem when delivery hangs (work often written before handlers complete). Sequential phases auto-trigger when ready—no manual babysitting needed.
