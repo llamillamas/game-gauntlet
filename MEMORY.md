@@ -12,26 +12,29 @@
 - **Skills:** Be proactive with them. Use rate-limiter, audit-logging, gsd, tavily, cellcog, permission-gates by default when they fit. They're tools to improve outcomes, not optional extras.
 - **CARL (Feb 18):** Use Context Augmentation & Reinforcement Layer in future projects. Installed with `npx carl-core`. Helps Claude recognize and follow contextual rules. Use in `./.claude` for local projects.
 
-## Available Skills (13 Total) — Deployment by Fit
-**Core Autonomy (Deployed on Game-Gauntlet):**
-- **audit-logging** — Track all tool calls + external sends (required for autonomous ops)
-- **rate-limiter** — Prevent runaway API calls (protects Neon + Helius quota)
-- **permission-gates** — Read-only vs write gates (safe for Vercel/env handling)
-- **gsd** — Project phases + deliverables (already using for 3-agent structure)
-- **secrets-manager** — Redact sensitive data from context (for env/token handling)
+## Available Skills (10 Total) — ✅ All Installed Feb 20, 09:21 UTC
 
-**Research & Output (Available):**
-- **tavily** — AI-optimized web search (for documentation lookups)
-- **cellcog** — Multi-modal analysis (for contract audit summaries)
-- **weather** — Current conditions (not needed yet)
+**Core Autonomy (Auto-Active):**
+- **audit-logging** ✅ — Track all tool calls + external sends + file ops
+- **rate-limiter** ✅ — Prevent runaway API calls (protects Neon + Helius quota)
+- **permission-gates** ✅ — Read-only vs write gates (safe for Vercel/env handling)
+- **secrets-manager** ✅ — Redact + encrypt sensitive data from context
 
-**Specialized (Available):**
-- **coding-agent** — Sub-agent orchestration (already spawned 3 agents)
-- **skill-creator** — Build new skills (if needed)
-- **bluebubbles** — iMessage/SMS integration (not needed)
-- **ui-ux-pro-max** — Design toolkit (for frontend polish later)
+**Project Planning:**
+- **gsd** ✅ — Structured phase planning + deliverables
+- **gsd-system** ✅ — Full context engineering (prevents scope rot)
 
-**Strategy:** Deploy by fit. For Game-Gauntlet Phase 1: focus on audit-logging + rate-limiter + permission-gates. Keep them silent unless they flag issues.
+**Agent Orchestration:**
+- **coding-agent** ✅ — Background code implementation (sub-agents)
+
+**Research & Analysis:**
+- **tavily** ✅ — AI-optimized web search
+- **cellcog** ✅ — Multi-modal analysis (PDFs → reports/dashboards/video)
+
+**Design:**
+- **ui-ux-pro-max** ✅ — Design intelligence (styles, palettes, components)
+
+**Deployment:** See `AGENTS_CONFIG.md` (Sonnet 4.6 swarm setup) + `SKILL_QUICK_REF.md` (quick spawning)
 
 ## Project Zero (Game-Gauntlet)
 **Status:** Active UI redesign. Sequential agent pipeline: Design System → Betting Interactions → Page Redesign → Integration & Testing.
