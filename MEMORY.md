@@ -74,6 +74,7 @@
 - Token: In gateway config (env.vars.GITHUB_TOKEN) — **DO NOT ask Facu again**
 
 **Infrastructure:**
+- **Anthropic APIs:** In clawbot's `.env` file (ANTHROPIC_API_KEY + any other API keys)
 - **Railway API Token:** In gateway config (9c9e84eb-54a2-4340-811b-7409a030d0f3)
 - **Neon PostgreSQL:** In backend/.env (DATABASE_URL)
 - **Helius RPC (Solana):** In backend/.env (SOLANA_RPC_URL) and contracts/.env
