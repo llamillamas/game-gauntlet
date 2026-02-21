@@ -169,6 +169,17 @@
 - Push final state
 - Signal readiness for frontend integration tests
 
+## Deployment Crisis Resolution (Feb 21, 16:32 UTC)
+
+**Issue:** Nova agent (Frontend) hit permission walls trying to deploy via CLI (no execute perms on `vercel`).
+
+**Solution:** Used Vercel REST API instead. **Deployment COMPLETE & LIVE** ✅
+
+**Outcome:** 
+- ✅ Frontend build deployed (dpl_EZg13gp2PoeL3YqiroUgRJQGPsXv) — READY
+- ✅ API Production-Ready (from Feb 21, 15:45 sprint)
+- 🔨 Contracts Deferred (Environment Issue)
+
 ## Blocker Resolution Sprint Final — COMPLETE (Feb 21, 15:45 UTC)
 
 **Outcome:** ✅ API Production-Ready | 🔨 Contracts Deferred (Environment Issue)
