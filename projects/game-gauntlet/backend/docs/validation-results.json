@@ -1,0 +1,316 @@
+{
+  "timestamp": "2026-02-21T13:50:30.480Z",
+  "rpc": {
+    "status": "passed",
+    "details": {
+      "latestSlot": 443681723,
+      "version": {
+        "feature-set": 1620780344,
+        "solana-core": "3.1.8"
+      },
+      "epoch": 1027,
+      "slotIndex": 17725
+    }
+  },
+  "contracts": {
+    "status": "partial",
+    "details": {
+      "accounts": [
+        {
+          "name": "Platform Treasury",
+          "address": "GGADxYCJhYrVj8TXcNnmTZdkdM7mEwvQVQzpNNyVNq1B",
+          "status": "not_found",
+          "warning": "Account does not exist on devnet"
+        },
+        {
+          "name": "USDC Mint",
+          "address": "EPjFWaJrgqAfkYF2zthencG2K6cqtjUWg3oqWXW9vLw",
+          "status": "not_found",
+          "warning": "Account does not exist on devnet"
+        },
+        {
+          "name": "Game Registry Program",
+          "address": "GGReg1111111111111111111111111111111111111111",
+          "status": "error",
+          "error": "Invalid public key input"
+        },
+        {
+          "name": "Betting Pool Program",
+          "address": "GGBet1111111111111111111111111111111111111111",
+          "status": "error",
+          "error": "Invalid public key input"
+        },
+        {
+          "name": "Results Settlement Program",
+          "address": "GGRes1111111111111111111111111111111111111111",
+          "status": "error",
+          "error": "Invalid public key input"
+        }
+      ]
+    }
+  },
+  "database": {
+    "status": "partial",
+    "details": {
+      "version": "17.8",
+      "requiredTables": [
+        "events",
+        "games",
+        "parties",
+        "bets",
+        "wallets"
+      ],
+      "foundTables": [
+        "games",
+        "parties"
+      ],
+      "missingTables": [
+        "events",
+        "bets",
+        "wallets"
+      ],
+      "schema": {
+        "games": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "column": "creator_address",
+            "type": "character varying",
+            "nullable": false
+          },
+          {
+            "column": "title",
+            "type": "character varying",
+            "nullable": false
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "column": "github_url",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "preview_image_url",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "nft_mint",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "transaction_hash",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "status",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "play_count",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "column": "total_earnings",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "column": "avg_bet",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          }
+        ],
+        "parties": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "column": "creator_address",
+            "type": "character varying",
+            "nullable": false
+          },
+          {
+            "column": "games",
+            "type": "jsonb",
+            "nullable": false
+          },
+          {
+            "column": "players",
+            "type": "jsonb",
+            "nullable": false
+          },
+          {
+            "column": "bet_amount",
+            "type": "bigint",
+            "nullable": false
+          },
+          {
+            "column": "total_pot",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "column": "min_players",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "column": "max_players",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "column": "status",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "winner_address",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "party_url",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "solana_account",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "lock_transaction_hash",
+            "type": "character varying",
+            "nullable": true
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "column": "started_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "column": "settled_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          }
+        ]
+      },
+      "writeTest": "failed"
+    }
+  },
+  "contractFlow": {
+    "status": "partial",
+    "details": {
+      "expectedFlow": [
+        {
+          "step": 1,
+          "action": "Create Event",
+          "endpoint": "POST /api/events",
+          "payload": {
+            "game_id": "mario-kart-tournament",
+            "organizer_wallet": "ABC123...",
+            "start_time": "2026-02-25T18:00:00Z",
+            "entry_fee": 10,
+            "max_participants": 16
+          },
+          "expectedResponse": {
+            "event_id": "uuid",
+            "status": "created",
+            "on_chain_account": "solana_pubkey"
+          },
+          "onChainTx": "Initialize event PDA on Game Registry Program"
+        },
+        {
+          "step": 2,
+          "action": "Open Bet",
+          "endpoint": "POST /api/bets",
+          "payload": {
+            "event_id": "uuid_from_step_1",
+            "bet_type": "winner",
+            "odds": {
+              "player1": 1.5,
+              "player2": 2.5
+            },
+            "deadline": "2026-02-25T17:55:00Z"
+          },
+          "expectedResponse": {
+            "bet_pool_id": "uuid",
+            "status": "open",
+            "on_chain_pool": "solana_pubkey"
+          },
+          "onChainTx": "Initialize betting pool PDA on Betting Pool Program"
+        },
+        {
+          "step": 3,
+          "action": "Place Bet",
+          "endpoint": "POST /api/bets/:betId/place",
+          "payload": {
+            "wallet_address": "UserWallet123...",
+            "amount": 50,
+            "selection": "player1",
+            "signature": "solana_tx_signature"
+          },
+          "expectedResponse": {
+            "bet_entry_id": "uuid",
+            "status": "confirmed",
+            "escrow_account": "solana_pubkey"
+          },
+          "onChainTx": "Transfer USDC to escrow PDA, record bet entry"
+        },
+        {
+          "step": 4,
+          "action": "Settle Event",
+          "endpoint": "POST /api/events/:eventId/settle",
+          "payload": {
+            "winner": "player1",
+            "admin_signature": "admin_wallet_signature"
+          },
+          "expectedResponse": {
+            "settlement_id": "uuid",
+            "status": "settled",
+            "payouts_initiated": true
+          },
+          "onChainTx": "Call Results Settlement Program, distribute USDC from escrow to winners + platform fee"
+        }
+      ],
+      "gaps": [
+        "Missing route files: events.js, bets.js, wallets.js"
+      ]
+    }
+  },
+  "summary": {
+    "passed": 1,
+    "failed": 3,
+    "warnings": 5
+  }
+}
