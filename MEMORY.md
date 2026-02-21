@@ -256,3 +256,28 @@
 Used **Option A:** Set mock IDs → validate API/DB → defer contracts to separate phase. This unblocks the system immediately while contracts get fixed independently.
 
 System is ready. API is complete.
+
+## Phase 4: Page Redesign (Nova + Forge Parallel) — Feb 21, 18:02 UTC
+
+**🚀 SPAWNED** — Both agents running parallel:
+
+**Nova (Frontend) — 15 Files**
+- 8 Components: BettingCard, EventHeader, OddsGrid, BetHistoryTable, WalletInfo, SettlementDialog, LiveOddsStream, UserDashboard
+- 4 Hooks: useBettingFlow, useWalletConnection, useOddsStream, useSettlement
+- 3 Pages: dashboard, live bets, history
+- Target: 45min | TypeScript + Tailwind
+- Session: `agent:main:subagent:6e632920-6e72-4af0-90e7-4eddebc435e1`
+
+**Forge (Backend) — 4 Endpoints**
+- GET `/api/v1/bets/user/:walletAddress` — User bet history
+- POST `/api/v1/bets/settle` — Bet settlement + payout
+- GET `/api/v1/wallets/:address/balance` — Wallet balance
+- POST `/api/v1/events/:eventId/odds` — Live odds update
+- Target: 30min | E2E tests included
+- Session: `agent:main:subagent:99eabddc-dc93-4ca9-bdf3-954b1f4ba978`
+
+**Next Queue:**
+- Sentinel (Security review)
+- Gauge (QA + Release)
+
+**Signal:** Facu approved Phase 4 at 18:02 UTC. Both agents executing concurrently. ETA completion: 18:45–19:00 UTC.
